@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">LoginAPP</string>
+    <string name="titulo"><u>Tu Login Molón</u></string>
+    <string name="nombre">Escribe aquí tu nombre</string>
+    <string name="contraseña">Dame una contraseña</string>
+    <string name="recordar">¿Te recuerdo?</string>
+    <string name="registrar">Registrar</string>
+    <string name="borrar">Borrar</string>
+</resources>
