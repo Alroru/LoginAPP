@@ -1,7 +1,10 @@
 package es.studium.loginapp;
 
+
+
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -19,8 +22,12 @@ public class Bienvenida extends AppCompatActivity {
         borrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                deleteSharedPreferences("MyPrefs");
+
+
                 Toast.makeText(Bienvenida.this, "Usuario Borrado", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(Bienvenida.this,MainActivity.class);
+                startActivity(intent);
+                deleteSharedPreferences("MyPrefs");
             }
         });
     }

@@ -18,8 +18,8 @@ public class MainActivity extends AppCompatActivity {
     Switch recordar;
 
     public static final String MyPREFERENCES = "MyPrefs" ;
-    public static final String Nombre = "nombre";
-    public static final String Contraseña = "contraseña";
+    public static final String Nombre = "Alejandro";
+    public static final String Contraseña = "20090259N";
 
     SharedPreferences sharedpreferences;
 
@@ -39,13 +39,14 @@ public class MainActivity extends AppCompatActivity {
 
         // ¿Hay ya información en las Shared Preferences?
         String isShared = sharedpreferences.getString(Nombre,"");
-        if(isShared!=null)
+        if(isShared!="")
         {
-
+            Intent intent = new Intent(MainActivity.this, Bienvenida.class);
+            startActivity(intent);
             //Obtener las credenciales y colocarlas en sus respectivos lugares
             nombre.setText(sharedpreferences.getString(Nombre, ""));
             contraseña.setText(sharedpreferences.getString(Contraseña, ""));
-            
+
 
         }
 
@@ -57,6 +58,10 @@ public class MainActivity extends AppCompatActivity {
                 if (nombre.getText().toString().equals("")||contraseña.getText().toString().equals(""))
                 {
                     Toast.makeText(MainActivity.this, "Faltan Datos", Toast.LENGTH_LONG).show();
+                }
+                else if(!nombre.getText().toString().equals(Nombre))
+                {
+                    Toast.makeText(MainActivity.this, "El usuario no es correcto", Toast.LENGTH_LONG).show();
                 }
                 else
                 {
